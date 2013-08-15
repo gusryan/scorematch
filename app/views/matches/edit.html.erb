@@ -1,0 +1,15 @@
+<ul class="nav nav-tabs">
+<li><a href="/courses">Courses</a></li>
+<li><a href="/golfers">Golfers</a></li>
+<li class="active"><a href="/matches">Matches</a></li>
+<li><a href="/scores">Scores</a></li>
+</ul>
+
+<p />
+
+<h3>Edit Match</h3>
+
+<%= render 'form' %>
+
+<%= link_to 'Show', @match %> |
+<%= link_to 'Back', matches_path %>

@@ -1,0 +1,42 @@
+<p />
+<ul class="nav nav-tabs">
+<li><a href="../courses">Courses</a></li>
+<li><a href="../golfers">Golfers</a></li>
+<li><a href="../matches">Matches</a></li>
+<li class="active"><a href="../scores">Scores</a></li>
+</ul>
+
+<div ="container">
+<h3>Scores</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Golfer</th>
+      <th>Hole</th>
+      <th>Match</th>
+      <th>Score</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @scores.each do |score| %>
+      <tr>
+        <td><%= score.golfer1_id.name %></td>
+        <td><%= score.golfer2_id.name %></td>
+        <td><%= score.hole_id %></td>
+        <td><%= score.match_id %></td>
+        <td><%= score.score %></td>
+        <td><%= link_to 'Show', score %></td>
+        <td><%= link_to 'Edit', edit_score_path(score) %></td>
+        <td><%= link_to 'Destroy', score, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Score', new_score_path %>
+<p />
+</div>
