@@ -1,9 +1,5 @@
 class Match < ActiveRecord::Base
-  belongs_to :course 
-  belongs_to :golfer
+  belongs_to :course
   has_many :scores
-  has_many :holes
-  validates :name, :golfer1, :golfer2, :presence => true
-  validates :name, :uniqueness => true
-
+  has_many :golfers
 end

@@ -11,15 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130814213136) do
+ActiveRecord::Schema.define(version: 20130820040045) do
 
   create_table "courses", force: true do |t|
     t.string   "name"
-    t.integer  "par"
-    t.text     "location"
+    t.string   "location"
+    t.string   "par"
     t.string   "tees"
-    t.integer  "slope"
-    t.integer  "rating"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -47,7 +45,6 @@ ActiveRecord::Schema.define(version: 20130814213136) do
     t.string   "name"
     t.string   "golfer1"
     t.string   "golfer2"
-    t.string   "course"
     t.integer  "score"
     t.string   "winner"
     t.integer  "course_id"

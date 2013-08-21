@@ -18,7 +18,7 @@ class CoursesControllerTest < ActionController::TestCase
 
   test "should create course" do
     assert_difference('Course.count') do
-      post :create, course: { location: @course.location, name: @course.name, par: @course.par, rating: @course.rating, slope: @course.slope, tees: @course.tees }
+      post :create, course: { location: @course.location, name: @course.name, par: @course.par, tees: @course.tees }
     end
 
     assert_redirected_to course_path(assigns(:course))
@@ -35,7 +35,7 @@ class CoursesControllerTest < ActionController::TestCase
   end
 
   test "should update course" do
-    patch :update, id: @course, course: { location: @course.location, name: @course.name, par: @course.par, rating: @course.rating, slope: @course.slope, tees: @course.tees }
+    patch :update, id: @course, course: { location: @course.location, name: @course.name, par: @course.par, tees: @course.tees }
     assert_redirected_to course_path(assigns(:course))
   end
 

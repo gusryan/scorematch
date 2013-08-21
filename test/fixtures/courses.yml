@@ -2,16 +2,12 @@
 
 one:
   name: MyString
-  par: 1
-  location: MyText
+  location: MyString
+  par: MyString
   tees: MyString
-  slope: 1
-  rating: 1
 
 two:
   name: MyString
-  par: 1
-  location: MyText
+  location: MyString
+  par: MyString
   tees: MyString
-  slope: 1
-  rating: 1

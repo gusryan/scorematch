@@ -1,20 +1,18 @@
-Scorematch::Application.routes.draw do
-  resources :scores
-
+Matchplay::Application.routes.draw do
   resources :matches
 
-resources :golfers
+  resources :scores
 
-resources :courses do
-  resources :holes
-
+  resources :courses do
+   resources :holes
 end
+  resources :golfers
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
- root 'courses#index'
+  # root 'welcome#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
