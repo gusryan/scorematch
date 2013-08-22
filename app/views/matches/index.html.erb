@@ -1,29 +1,30 @@
 <h3>Matches</h3>
 
-<table>
+<table class="table table-striping">
   <thead>
     <tr>
       <th>Name</th>
       <th>Golfer 1</th>
       <th>Golfer 2</th>
+      <th>Course</th>
       <th>Score</th>
       <th>Winner</th>
-      <th>Course</th>
     </tr>
   </thead>
 
   <tbody>
     <% @matches.each do |match| %>
       <tr>
-        <td><%= link_to match.name, name %></td>
+        <td><%= link_to match.name, match %></td>
         <td><%= match.golfer1 %></td>
         <td><%= match.golfer2 %></td>
+	<td><%= match.course.name %></td>
         <td><%= match.score %></td>
         <td><%= match.winner %></td>
-        <td><%= match.course %></td>
-        <td><%= link_to 'Show', match %></td>
-        <td><%= link_to 'Edit', edit_match_path(match) %></td>
-        <td><%= link_to 'Destroy', match, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', match %> 
+        | <%= link_to 'Edit', edit_match_path(match) %> | 
+        <%= link_to 'Destroy', match, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</td>
       </tr>
     <% end %>
   </tbody>
