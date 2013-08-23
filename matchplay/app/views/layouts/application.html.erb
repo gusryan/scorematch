@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Matchplay</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div class="container">
+<div class="page-header"><h2>Match Play Calculator</h2></div>
+
+<ul class="nav nav-tabs">
+<li><a href="/courses">Courses</a></li>
+<li><a href="/golfers">Golfers</a></li>
+<li><a href="/matches">Matches</a></li>
+<li><a href="/scores">Scores</a><li>
+</ul>
+
+<%= yield %>
+
+
+</body>
+</div>
+</html>
