@@ -11,8 +11,11 @@ at <strong><%= @match.course.name %></strong>
 </p>
 <p><strong>Score:</strong>
 <table class="table table-striping"><tr>
-<td><%= @match.course.holes.each do |s| %><%= s.yardage %></td>
-<td><%= s.par %><% end %></td></table>
+<td><% @match.course.holes.each do |s| %><%= s.yardage %></td>
+<td><%= s.par %></td>
+<td><%= get_golfer_score(@match.id, s).score %></td>
+<% end %>
+</table>
 </p>
 <p>
   <strong>Winner:</strong>
