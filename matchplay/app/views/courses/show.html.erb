@@ -1,0 +1,73 @@
+<section>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <h3> <%= @course.name %></h3>
+</p>
+
+<p>
+  <strong>Par:</strong>
+  <%= @course.par %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @course.location %>
+</p>
+
+<p>
+  <strong>Tees:</strong>
+  <%= @course.tees %>
+</p>
+
+<!-- Hole Listing -->
+
+<table class="table table-bordered">
+<tr><td>Hole #</td><%= @course.holes.each do |c| %>
+<td><%= c.hole_number %><% end %></td>
+</tr><br>
+
+<tr><td >Par</td><% @course.holes.each do |c| %>
+<td><%= c.par %><% end %></td>
+</tr><br>
+
+<tr><td>Handicap</td><% @course.holes.each do |c| %>
+<td><%= c.handicap %><% end %></td>
+</tr><br>
+
+<tr><td>Yardage</td><% @course.holes.each do |c| %>
+<td><%= c.yardage %><% end %>
+</td>
+</tr><br>
+</table>
+
+<!-- New hole form -->
+<h3>Add a hole:</h3>
+
+<%= form_for([@course, @course.holes.build]) do |f| %>
+<div class="field">
+<%= f.label :hole_number %><br />
+<%= f.text_field :hole_number %>
+</div>
+<div class="field">
+<%= f.label :par %><br />
+<%= f.text_field :par %>
+</div>
+<div class="field">
+<%= f.label :handicap %><br />
+<%= f.text_field :handicap %>
+</div>
+<div class="field">
+<%= f.label :yardage %><br />
+<%= f.text_field :yardage %>
+</div>
+<div class="actions">
+<%= f.submit %>
+</div>
+
+<% end %>
+
+<%= link_to 'Edit', edit_course_path(@course) %> |
+<%= link_to 'Back', courses_path %>
+</body>
+</html>

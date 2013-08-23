@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <h3><em><%= @match.name %></em></h3>
+</p>
+
+<p>
+<h3><%= @match.golfer1 %> vs. <%= @match.golfer2 %>
+</h3>
+at <strong><%= @match.course.name %></strong>
+</p>
+<p><strong>Score:</strong>
+<table class="table table-striping"><tr>
+<td><%= @match.course.holes.each do |s| %><%= s.yardage %></td>
+<td><%= s.par %><% end %></td></table>
+</p>
+<p>
+  <strong>Winner:</strong>
+  <%= @match.winner %>
+</p>
+
+
+<%= link_to 'Edit', edit_match_path(@match) %> |
+<%= link_to 'Back', matches_path %>

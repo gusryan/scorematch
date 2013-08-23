@@ -1,0 +1,25 @@
+<h3>Golfers</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Handicap</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @golfers.each do |golfer| %>
+      <tr>
+        <td><%= link_to golfer.name, golfer %></td>
+        <td><%= golfer.handicap %></td>
+        <td><%= link_to 'Show', golfer %> | 
+        <%= link_to 'Edit', edit_golfer_path(golfer) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Golfer', new_golfer_path %>
