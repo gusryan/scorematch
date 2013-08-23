@@ -16,8 +16,8 @@
     <% @matches.each do |match| %>
       <tr>
         <td><%= link_to match.name, match %></td>
-        <td><%= match.golfer1 %></td>
-        <td><%= match.golfer2 %></td>
+        <td><%= match.golfer1.name %></td>
+        <td><%= match.golfer2.name %></td>
 	<td><%= match.course.name %></td>
         <td><%= match.score %></td>
         <td><%= match.winner %></td>

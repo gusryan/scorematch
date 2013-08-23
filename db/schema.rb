@@ -43,8 +43,8 @@ ActiveRecord::Schema.define(version: 20130820040045) do
 
   create_table "matches", force: true do |t|
     t.string   "name"
-    t.string   "golfer1"
-    t.string   "golfer2"
+    t.string   "golfer1_id"
+    t.string   "golfer2_id"
     t.integer  "score"
     t.string   "winner"
     t.integer  "course_id"

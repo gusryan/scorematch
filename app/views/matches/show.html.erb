@@ -5,7 +5,7 @@
 </p>
 
 <p>
-<h3><%= @match.golfer1 %> vs. <%= @match.golfer2 %>
+<h3><%= Golfer.find(@match.golfer1).name %> vs. <%= @match.golfer2.name %>
 </h3>
 at <strong><%= @match.course.name %></strong>
 </p>

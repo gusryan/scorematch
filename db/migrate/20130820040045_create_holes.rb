@@ -1,6 +1,5 @@
 class CreateHoles < ActiveRecord::Migration
   def change
-    drop_table :holes
     create_table :holes do |t|
       t.integer :hole_number
       t.integer :par
