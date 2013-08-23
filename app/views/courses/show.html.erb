@@ -23,8 +23,8 @@
 <!-- Hole Listing -->
 
 <table class="table table-bordered">
-<tr><td>Hole #</td><% @course.holes.each do |c| %>
-<td><strong><%= c.hole_number %><% end %></strong></td>
+<tr><td>Hole #</td><%= @course.holes.each do |c| %>
+<td><%= c.hole_number %><% end %></td>
 </tr><br>
 
 <tr><td >Par</td><% @course.holes.each do |c| %>
