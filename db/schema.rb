@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 20130820040045) do
     t.string   "name"
     t.string   "golfer1_id"
     t.string   "golfer2_id"
-    t.integer  "score"
+    t.integer  "result"
     t.string   "winner"
     t.integer  "course_id"
     t.datetime "created_at"
@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(version: 20130820040045) do
     t.integer  "golfer_id"
     t.integer  "hole_id"
     t.integer  "match_id"
-    t.integer  "score"
+    t.integer  "stroke"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

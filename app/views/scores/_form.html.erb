@@ -11,21 +11,22 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :golfer_id %><br>
-    <%= f.number_field :golfer_id %>
+<div class="field">
+    <%= f.label :match_id %><br>
+<%= collection_select(:match, :match_id, Match.all, :id, :name) %>
   </div>
+<div class="field">
+    <%= f.label :golfer_id %><br>
+
+<%= collection_select(:match, :golfer_id, Golfer.all, :id, :name) %>  
+</div>
   <div class="field">
-    <%= f.label :hole_id %><br>
+    <%= f.label 'Hole #' %><br>
     <%= f.number_field :hole_id %>
   </div>
   <div class="field">
-    <%= f.label :match_id %><br>
-    <%= f.number_field :match_id %>
-  </div>
-  <div class="field">
-    <%= f.label :score %><br>
-    <%= f.number_field :score %>
+    <%= f.label 'Strokes' %><br>
+    <%= f.number_field :stroke %>
   </div>
   <div class="actions">
     <%= f.submit %>

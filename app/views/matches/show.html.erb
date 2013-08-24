@@ -10,11 +10,65 @@
 at <strong><%= @match.course.name %></strong>
 </p>
 <p><strong>Score:</strong>
-<table class="table table-striping"><tr>
-<td><% @match.course.holes.each do |s| %><%= s.yardage %></td>
-<td><%= s.par %></td>
-<td><%= get_golfer_score(@match.id, s).score %></td>
+<table class="table table-bordered"><tr>
+
+<tr><td><strong>Hole #</strong></td><% @match.course.holes.each do |s| %>
+<td><%= s.hole_number %><% end %></td>
+</tr><br>
+
+<tr><td><strong>Par</strong></td><% @match.course.holes.each do |s| %>
+<td><%= s.par %><% end %></td>
+</tr><br>
+
+<tr><td><strong>Handicap</strong></td><% @match.course.holes.each do |s| %>
+<td><%= s.handicap %><% end %></td>
+</tr>
+<br>
+
+<tr><td><strong>Yardage</strong></td><% @match.course.holes.each do |s| %>
+<td><%= s.yardage %><% end %>
+</td>
+<tr><td><strong><%= Golfer.find(@match.golfer1).name %></strong></td>
+<% @match.course.holes.each do |s| %>
+<td>
+<div class ="field">
+<select name="hole_score" id="" class="form-control" style="width: 68px;">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+	    <option value="10">10</option>
+            <option value="max">M</option>
+</select></td><% end %>
+</div>
+</td>
+</tr>
+<tr><td><strong><%= Golfer.find(@match.golfer2).name %></strong></td>
+<% @match.course.holes.each do |s| %>
+<td>
+<% form_for([@match, @match.course.hole.strokes.build]) do |n| %>
+<div class ="field">
+<select name="hole_score" id="" class="form-control" style="width: 68px;">
+            <option value="1">1<%= n.submit '1' %></option>
+	    <option value="2">2<%= n.submit '2' %></option>
+            <option value="3">3<%= n.submit '3' %></option>
+	    <option value="4">4<%= n.submit '4' %></option>
+            <option value="5">5<%= n.submit '5' %></option>
+            <option value="6">6<%= n.submit '6' %></option>
+            <option value="7">7<%= n.submit '7' %></option>
+            <option value="8">8<%= n.submit '8' %></option>
+            <option value="9">9<%= n.submit '9' %></option>
+            <option value="10">10<%= n.submit '10' %></option>
+            <option value="max">M<%= n.submit 'M' %></option>
 <% end %>
+</select></td><% end %>
+</div>
+</tr>
 </table>
 </p>
 <p>

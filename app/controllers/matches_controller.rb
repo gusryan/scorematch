@@ -71,4 +71,11 @@ class MatchesController < ApplicationController
     def match_params
       params.require(:match).permit(:name, :golfer1_id, :golfer2_id, :course_id, :score, :winner)
     end
+def stroke_submit
+    if params[:commit] == 'A'
+        # A was pressed 
+    elsif params[:commit] == 'B'
+        # B was pressed
+    end
+end
 end
