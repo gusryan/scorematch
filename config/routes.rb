@@ -1,8 +1,7 @@
 Matchplay::Application.routes.draw do
-  resources :matches
-
-  resources :scores
-
+  resources :matches do
+    resources :scores
+  end
   resources :courses do
    resources :holes
 end

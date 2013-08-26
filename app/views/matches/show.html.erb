@@ -51,22 +51,10 @@ at <strong><%= @match.course.name %></strong>
 <tr><td><strong><%= Golfer.find(@match.golfer2).name %></strong></td>
 <% @match.course.holes.each do |s| %>
 <td>
-<% form_for([@match, @match.course.hole.strokes.build]) do |n| %>
-<div class ="field">
-<select name="hole_score" id="" class="form-control" style="width: 68px;">
-            <option value="1">1<%= n.submit '1' %></option>
-	    <option value="2">2<%= n.submit '2' %></option>
-            <option value="3">3<%= n.submit '3' %></option>
-	    <option value="4">4<%= n.submit '4' %></option>
-            <option value="5">5<%= n.submit '5' %></option>
-            <option value="6">6<%= n.submit '6' %></option>
-            <option value="7">7<%= n.submit '7' %></option>
-            <option value="8">8<%= n.submit '8' %></option>
-            <option value="9">9<%= n.submit '9' %></option>
-            <option value="10">10<%= n.submit '10' %></option>
-            <option value="max">M<%= n.submit 'M' %></option>
+<% form_for([@match, @match.scores.build]) do |n| %>
+  <%= n.select(:stroke, options_for_select((10..100).step(10).to_a.map{|s| ["#{s}%", s]})) %>
 <% end %>
-</select></td><% end %>
+</td><% end %>
 </div>
 </tr>
 </table>
