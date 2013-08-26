@@ -15,11 +15,10 @@
     <%= f.label :match_id %><br>
 <%= collection_select(:match, :match_id, Match.all, :id, :name) %>
   </div>
-<div class="field">
+  <div class="field">
     <%= f.label :golfer_id %><br>
-
-<%= collection_select(:match, :golfer_id, Golfer.all, :id, :name) %>  
-</div>
+    <%= collection_select(:match, :golfer_id, Golfer.all, :id, :name) %>  
+  </div>
   <div class="field">
     <%= f.label 'Hole #' %><br>
     <%= f.number_field :hole_id %>

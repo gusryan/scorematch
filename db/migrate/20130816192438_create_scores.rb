@@ -4,7 +4,7 @@ class CreateScores < ActiveRecord::Migration
       t.integer :golfer_id
       t.integer :hole_id
       t.integer :match_id
-      t.integer :score
+      t.integer :stroke
 
       t.timestamps
     end
