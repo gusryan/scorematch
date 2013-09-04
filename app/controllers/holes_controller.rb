@@ -13,4 +13,3 @@ class HolesController < ApplicationController
     params.require(:hole).permit(:hole_number, :par, :handicap, :yardage)
   end
 end
-

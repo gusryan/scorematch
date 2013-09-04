@@ -4,10 +4,9 @@ class CreateMatches < ActiveRecord::Migration
       t.string :name
       t.string :golfer1_id
       t.string :golfer2_id
+      t.integer :score
       t.integer :result
-      t.string :winner
       t.references :course, index: true
-
       t.timestamps
     end
   end
