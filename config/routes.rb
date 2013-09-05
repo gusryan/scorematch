@@ -1,6 +1,8 @@
 Matchplay::Application.routes.draw do
   resources :matches do
-    resources :scores
+    resources :scores do
+    resources :strokes
+  end
   end
   resources :courses do
    resources :holes
@@ -11,7 +13,7 @@ end
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+   root 'matches#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
