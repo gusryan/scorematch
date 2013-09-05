@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130820040045) do
+ActiveRecord::Schema.define(version: 20130903210652) do
 
   create_table "courses", force: true do |t|
     t.string   "name"
@@ -31,9 +31,11 @@ ActiveRecord::Schema.define(version: 20130820040045) do
 
   create_table "holes", force: true do |t|
     t.integer  "hole_number"
-    t.integer  "par"
-    t.integer  "handicap"
+    t.string   "par"
     t.integer  "yardage"
+    t.integer  "handicap"
+    t.integer  "stroke"
+    t.integer  "hole_winner"
     t.integer  "course_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -45,8 +47,8 @@ ActiveRecord::Schema.define(version: 20130820040045) do
     t.string   "name"
     t.string   "golfer1_id"
     t.string   "golfer2_id"
+    t.integer  "score"
     t.integer  "result"
-    t.string   "winner"
     t.integer  "course_id"
     t.datetime "created_at"
     t.datetime "updated_at"
