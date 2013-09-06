@@ -8,7 +8,19 @@
 </h3>
 at <strong><%= @match.course.name %></strong>
 
+<<<<<<< HEAD
 <table class="table table-striping"><tr>
+=======
+<<<<<<< HEAD
+<table class="table zebra-striping"><tr>
+=======
+<<<<<<< HEAD
+<table class="table zebra-striping"><tr>
+=======
+<table class="table table-bordered"><tr>
+>>>>>>> d4dd9da885349903846efc2e0e1e1f8e5c6b63f7
+>>>>>>> b222f13b2ee51499e3d20672337ed8b2892d01f4
+>>>>>>> 5279f128ca338b7ee97f88de79ba686cab611a17
 <th colspan"9"><strong><center>Course Info</center></strong></th>
 <tr><td><strong>Hole #</strong></td><% @match.course.holes.each do |s| %>
 <td><%= s.hole_number %><% end %></td>
@@ -30,12 +42,49 @@ at <strong><%= @match.course.name %></strong>
 <tr><td><strong>Yardage</strong></td><% @match.course.holes.each do |s| %>
 <td><%= s.yardage %><% end %>
 </td>
+<<<<<<< HEAD
+</tr>
+</table>
+=======
+<<<<<<< HEAD
 </tr>
 </table>
 </p>
 <table border="2">
 <%= form_for ([@match, @match.scores.build]) do |f| %>
 <tr>
+<td>
+<strong>Golfer:</strong></td>
+<td>
+<%= f.select :golfer_id, Golfer.all.collect {|c| [c.name, c.id]} %>
+</td></tr>
+<tr><td>
+  <strong>Hole:</strong></td>
+<td>
+<%= f.select :hole_id, Hole.all.collect {|h| [h.hole_number, h.id]} %>
+</td></tr>
+</p>
+<tr class="info"><td>
+<strong>Strokes:</strong></td>
+<td>
+<%= f.select(:stroke, options_for_select((1..11).step(1).to_a.map{|s| ["#{s}", s]})) %>
+</td></tr>
+<tr><td>
+<%= f.submit %></td>
+</tr>
+</table>
+<% end %>
+</p>
+=======
+<<<<<<< HEAD
+</tr>
+</table>
+>>>>>>> 5279f128ca338b7ee97f88de79ba686cab611a17
+</p>
+<table border="2">
+<%= form_for ([@match, @match.scores.build]) do |f| %>
+<tr>
+<<<<<<< HEAD
 <td><strong>Match:</strong></td>
 <td>
 <%= f.select :match_id, Match.all.collect {|m| [m.name, m.id]} %>
@@ -44,11 +93,21 @@ at <strong><%= @match.course.name %></strong>
 <strong>Golfer:</strong></td>
 <td>
 <%= f.select :golfer_id, Golfer.all.collect {|g| [g.name, g.id]} %>
+=======
+<td>
+<strong>Golfer:</strong></td>
+<td>
+<%= f.select :golfer_id, Golfer.all.collect {|c| [c.name, c.id]} %>
+>>>>>>> 5279f128ca338b7ee97f88de79ba686cab611a17
 </td></tr>
 <tr><td>
   <strong>Hole:</strong></td>
 <td>
+<<<<<<< HEAD
 <%= f.select :hole_id, Hole.all.collect {|h| [h.hole_number, h.hole_number]} %>
+=======
+<%= f.select(:hole_id, options_for_select((1..18).step(1).to_a.map{|h| ["#{h}", h]})) %>
+>>>>>>> 5279f128ca338b7ee97f88de79ba686cab611a17
 </td></tr>
 </p>
 <tr class="info"><td>
@@ -56,13 +115,59 @@ at <strong><%= @match.course.name %></strong>
 <td>
 <%= f.select(:stroke, options_for_select((1..11).step(1).to_a.map{|s| ["#{s}", s]})) %>
 </td></tr>
+<<<<<<< HEAD
 <tr><td></td><td>
+<%= f.submit %></td>
+</tr>
+</table>
+=======
+<tr><td>
 <%= f.submit %></td>
 </tr>
 </table>
 <% end %>
 </p>
+=======
+</tr>
+</table>
+</p>
 
+<table>
+<tr>
+<td>
+<strong>Golfer:</strong><br>
+</td>
+</tr>
+  <strong>Hole:</strong>
+<div>
+<% form_for([@match, @match.course.holes.each]) do |n| %>
+<% end %>
+
+</div>
+</p>
+<p>
+  <strong>Strokes:</strong><select></p>
+<% form_for([@match, @match.scores.build]) do |n| %>
+<%= n.select(:stroke, options_for_select((10..100).step(10).to_a.map{|s| ["#{s}%", s]})) %>
+>>>>>>> 5279f128ca338b7ee97f88de79ba686cab611a17
+<% end %>
+</p>
+
+
+<tr><td><strong><%= Golfer.find(@match.golfer2).name %></strong></td>
+<td>
+<select>
+<% form_for([@match, @match.scores.build]) do |n| %>
+<%= n.select(:stroke, options_for_select((10..100).step(10).to_a.map{|s| ["#{s}%", s]})) %>
+<% end %>
+</select>
+</td>
+</tr>
+</table>
+>>>>>>> d4dd9da885349903846efc2e0e1e1f8e5c6b63f7
+>>>>>>> b222f13b2ee51499e3d20672337ed8b2892d01f4
+
+</p>
 
 <%= link_to 'Edit', edit_match_path(@match) %> |
 <%= link_to 'Back', matches_path %>

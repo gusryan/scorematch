@@ -28,7 +28,11 @@ class ScoresController < ApplicationController
 
     respond_to do |format|
       if @score.save
+<<<<<<< HEAD
         format.html { redirect_to match_scores_path, notice: 'Score was successfully created.' }
+=======
+        format.html { redirect_to @match, notice: 'Score was successfully created.' }
+>>>>>>> 5279f128ca338b7ee97f88de79ba686cab611a17
         format.json { render action: 'show', status: :created, location: @score }
       else
         format.html { render action: 'new' }
