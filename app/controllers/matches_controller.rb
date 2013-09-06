@@ -16,8 +16,8 @@ class MatchesController < ApplicationController
   def new
     @match = Match.new
   end
-
-  # GET /matches/1/edit
+  
+# GET /matches/1/edit
   def edit
   end
 
@@ -69,13 +69,6 @@ class MatchesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def match_params
-      params.require(:match).permit(:name, :golfer1_id, :golfer2_id, :course_id, :score, :winner)
+      params.require(:match).permit(:name, :golfer1_id, :golfer2_id, :course_id, :score, :result)
     end
-def stroke_submit
-    if params[:commit] == 'A'
-        # A was pressed 
-    elsif params[:commit] == 'B'
-        # B was pressed
-    end
-end
 end

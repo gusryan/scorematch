@@ -1,15 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  nummber: 1
-  par: 1
-  handicap: 1
+  hole_number: 1
+  par: MyString
   yardage: 1
-  course_id: 
+  handicap: 1
+  stroke: 1
+  hole_winner: 1
 
 two:
-  nummber: 1
-  par: 1
-  handicap: 1
+  hole_number: 1
+  par: MyString
   yardage: 1
-  course_id: 
+  handicap: 1
+  stroke: 1
+  hole_winner: 1
