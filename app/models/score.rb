@@ -3,5 +3,4 @@ class Score < ActiveRecord::Base
   belongs_to :golfer2, :class_name => "Golfer"
   belongs_to :match
   
-  validates :stroke, absence: true
 end
