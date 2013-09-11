@@ -3,6 +3,7 @@ class CreateGolfers < ActiveRecord::Migration
     create_table :golfers do |t|
       t.string :name
       t.integer :handicap
+     t.integer :score
 
       t.timestamps
     end
