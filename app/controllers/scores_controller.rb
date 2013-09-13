@@ -4,7 +4,7 @@ class ScoresController < ApplicationController
   # GET /scores
   # GET /scores.json
   def index
-    @scores = Score.find(:all, :order=>"hole_id", :order=>"match_id")
+    @scores = Score.find(:all, :order=>"golfer_id")
   end
 
   # GET /scores/1
@@ -17,6 +17,11 @@ class ScoresController < ApplicationController
     @score = Score.new
   end
 
+  def set_match
+      @match = Match.find(params[:id])
+    end
+
+
   # GET /scores/1/edit
   def edit
   end
@@ -28,11 +33,7 @@ class ScoresController < ApplicationController
 
     respond_to do |format|
       if @score.save
-<<<<<<< HEAD
         format.html { redirect_to match_scores_path, notice: 'Score was successfully created.' }
-=======
-        format.html { redirect_to @match, notice: 'Score was successfully created.' }
->>>>>>> 5279f128ca338b7ee97f88de79ba686cab611a17
         format.json { render action: 'show', status: :created, location: @score }
       else
         format.html { render action: 'new' }
@@ -46,7 +47,7 @@ class ScoresController < ApplicationController
   def update
     respond_to do |format|
       if @score.update(score_params)
-        format.html { redirect_to @score, notice: 'Score was successfully updated.' }
+        format.html { redirect_to match, notice: 'Score was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -68,7 +69,7 @@ class ScoresController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_score
-      @score = Score.find(params[:id])
+      @score = Score.find(params[:id, :match_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

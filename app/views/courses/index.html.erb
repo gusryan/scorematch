@@ -1,6 +1,7 @@
-<h3>Courses</h3>
+<h3><%= link_to 'New Course', new_course_path, :class => 'btn btn-success' %>
+</h3>
 
-<table class="table table-striping">
+<table id="golfers" class="table table-striping">
   <thead>
     <tr>
       <th>Name</th>
@@ -14,18 +15,14 @@
   <tbody>
     <% @courses.each do |course| %>
       <tr>
-        <td><%= link_to course.name, course %></td>
+        <td><%= link_to course.name, course, :class => 'btn btn-inverse' %></td>
         <td><%= course.location %></td>
         <td><%= course.par %></td>
         <td><%= course.tees %></td>
 	<td><%= course.holes.count %></td>
-        <td><%= link_to 'Show', course %> | 
-        <%= link_to 'Edit', edit_course_path(course) %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
 <br>
-
-<%= link_to 'New Course', new_course_path %>
+<br>

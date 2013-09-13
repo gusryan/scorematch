@@ -1901,13 +1901,13 @@ table {
  }
 .row {
   border-top: 1px solid #000000;
-  width: 500px;
+  width: 500px; 
   }
 
 .toprow {
   border-top: 0px;
  }
-#score {
+#scores {
   background-color: solid #000000
   float: center; 
 }
@@ -3804,6 +3804,9 @@ input[type="submit"].btn.btn-mini {
   margin-left: 0;
   list-style: none;
 }
+.nav li 
+{display: inline-block;
+}
 
 .nav > li > a {
   display: block;
@@ -4254,7 +4257,7 @@ input[type="submit"].btn.btn-mini {
   margin-left: -20px;
   font-size: 20px;
   font-weight: 200;
-  color: #777777;
+  color: #000000;
   text-shadow: 0 1px 0 #ffffff;
 }
 

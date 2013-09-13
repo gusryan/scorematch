@@ -3,7 +3,6 @@
 <table class="table table-striping">
   <thead>
     <tr>
- <th>Match</th>      
 <th>Golfer</th>
       <th>Hole</th>
       <th>Score</th>
@@ -13,8 +12,7 @@
   <tbody>
     <% @scores.each do |s| %>
       <tr>
-	<td><%= s.match_id %></td>
-        <td><%= s.golfer_id %></td>
+<td><%= Golfer.find(s.golfer_id).name %></td>
         <td><%= s.hole_id %></td>
         <td><%= s.stroke %></td>
       </tr>

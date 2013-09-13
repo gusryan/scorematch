@@ -1,6 +1,7 @@
-<h3>Golfers</h3>
+<h3><%= link_to 'New Golfer', new_golfer_path, :class => 'btn btn-success' %>
+</h3>
 
-<table>
+<table id="golfers" class="table table-striping">
   <thead>
     <tr>
       <th>Name</th>
@@ -11,10 +12,8 @@
   <tbody>
     <% @golfers.each do |golfer| %>
       <tr>
-        <td><%= link_to golfer.name, golfer %></td>
+        <td><%= link_to golfer.name, edit_golfer_path(golfer) %></td>
         <td><%= golfer.handicap %></td>
-        <td><%= link_to 'Show', golfer %> | 
-        <%= link_to 'Edit', edit_golfer_path(golfer) %></td>
       </tr>
     <% end %>
   </tbody>
@@ -22,4 +21,3 @@
 
 <br>
 
-<%= link_to 'New Golfer', new_golfer_path %>

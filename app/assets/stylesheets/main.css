@@ -2,6 +2,41 @@ table {
   width: 75%;
   background-color: transparent;
   border-collapse: collapse;
-  border-spacing: 50;
- }
+}
+body 
+ {
+background-color: #CCFFFF;
+/*padding-top: 80px;*/
+padding-top: 20px;
+
+}
+.nav li {
+  display: inline-block;
+  vertical-align: top;
+padding: 35%
+    /* Colours */
+  background-color: #FFFFFF;
+    /* Border */
+  /*border-radius: 25px;*/
+    /*text-align: center; width: 60%;
+    margin-left: auto;
+    margin-right: auto;*/
+    text-align: center;
+
+}
+#scores {
+width: 65%;
+}
+#golfers{
+width: 65%;
+}
+#courses{
+width: 65%;
+}
+#top-btn {
+width: 65%;
+}
+h3 {
+width: 75%;
+}
 

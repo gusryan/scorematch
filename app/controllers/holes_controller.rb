@@ -8,6 +8,15 @@ class HolesController < ApplicationController
     @hole.save
     redirect_to course_path(@course)
   end
+
+
+  def set_hole_winner
+        if (golfer1_id.scores.strokes < golfer2_id.scores.strokes)
+                holes.hole_winner = golfer1_id
+        else
+                holes.hole_winner = golfer2_id
+        end
+  end
   
   def hole_params
     params.require(:hole).permit(:hole_number, :par, :handicap, :yardage)
