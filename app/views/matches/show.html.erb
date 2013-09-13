@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 <id="notice"><%= notice %></p>
 <h4><%= @match.name %> - <%= Golfer.find(@match.golfer1).name %> vs. <%= @match.golfer2.name %> at <em><%= @match.course.name %></em></h4>
@@ -20,10 +21,21 @@
 
 >>>>>>> ccc3fa2acb7ebf15bf0f8fd2f4bb4a63276a99e6
 =======
+
+<<<<<<< HEAD
+<<<<<<< HEAD
+<d="notice"><%= notice %></p>
+
+<h3><%= @match.name %></h3>
+<h4><%= Golfer.find(@match.golfer1).name %> vs. <%= @match.golfer2.name %> at <%= @match.course.name %></h4>
+
+>>>>>>> 337d42880bbd6e423c004f7df78f0449f40e0e77
+=======
 <h3><%= @match.name %></h3>
 <h4><%= Golfer.find(@match.golfer1).name %> vs. <%= @match.golfer2.name %> at <%= @match.course.name %></h4>
 
 >>>>>>> ccc3fa2acb7ebf15bf0f8fd2f4bb4a63276a99e6
+<<<<<<< HEAD
 <table class="table table-striping">
   <tr>
 >>>>>>> 337d42880bbd6e423c004f7df78f0449f40e0e77
@@ -111,6 +123,64 @@
 <<<<<<< HEAD
   <table >
 =======
+=======
+<h3><%= @match.name %></h3>
+<h4><%= Golfer.find(@match.golfer1).name %> vs. <%= @match.golfer2.name %> at <%= @match.course.name %></h4>
+
+>>>>>>> ccc3fa2acb7ebf15bf0f8fd2f4bb4a63276a99e6
+<table class="table table-striping">
+  <tr>
+    <td><strong>Hole #</strong></td>
+    <% @match.course.holes.each do |s| %>
+      <td><%= s.hole_number %></td>
+    <% end %>
+  </tr>
+  <tr>
+    <td><strong>Par</strong></td>
+    <% @match.course.holes.each do |s| %>
+      <td><%= s.par %></td>
+    <% end %>
+  </tr>
+  <tr>
+    <td><strong>Handicap</strong></td>
+    <% @match.course.holes.each do |s| %>
+      <td><%= s.handicap %></td>
+    <% end %>
+  </tr>
+  <tr>
+    <td><strong>Yardage</strong></td>
+    <% @match.course.holes.each do |s| %>
+      <td><%= s.yardage %></td>
+    <% end %>
+  </tr>
+  <tr>
+<<<<<<< HEAD
+<<<<<<< HEAD
+    <td><strong><%= Golfer.find(@match.golfer1).name %></strong></td>
+    <% @g1scores.each do |gh1| %>
+<td><%= gh1.stroke %>
+    <% end %></td>
+  </tr>
+  <tr>
+    <td><strong><%= Golfer.find(@match.golfer2).name %></strong></td>
+ <% @g2scores.each do |gh2| %> <td>
+<%= gh2.stroke %><% end %>
+</td>
+=======
+>>>>>>> 337d42880bbd6e423c004f7df78f0449f40e0e77
+=======
+>>>>>>> ccc3fa2acb7ebf15bf0f8fd2f4bb4a63276a99e6
+    <td><strong>Golfer 1:</strong></td>
+    <% @match.course.holes.each do |gh1| %>
+      <td></td>
+    <% end %>
+  </tr>
+  <tr>
+    <td><strong>Golfer 2:</strong></td>
+    <% @match.course.holes.each do |gh1| %>
+      <td></td>
+    <% end %>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   <table>
@@ -142,21 +212,63 @@
     <tr class="info">
 >>>>>>> ccc3fa2acb7ebf15bf0f8fd2f4bb4a63276a99e6
 >>>>>>> 337d42880bbd6e423c004f7df78f0449f40e0e77
+=======
+>>>>>>> ccc3fa2acb7ebf15bf0f8fd2f4bb4a63276a99e6
+=======
+>>>>>>> ccc3fa2acb7ebf15bf0f8fd2f4bb4a63276a99e6
+  </tr>
+</table>
+
+<%= form_for ([@match, @match.scores.build]) do |f| %>
+  <%= f.hidden_field :match_id, :value => @match.id %>
+<<<<<<< HEAD
+<<<<<<< HEAD
+  <table>
+=======
+  <table border="2">
+>>>>>>> ccc3fa2acb7ebf15bf0f8fd2f4bb4a63276a99e6
+=======
+  <table border="2">
+>>>>>>> ccc3fa2acb7ebf15bf0f8fd2f4bb4a63276a99e6
+    <tr>
+      <td><strong>Golfer:</strong></td>
+      <td><%= f.select :golfer_id, {@match.golfer1.name => @match.golfer1.id, @match.golfer2.name => @match.golfer2.id} %></td>
+    </tr>
+    <tr>
+      <td><strong>Hole:</strong></td>
+      <td><%= f.select :hole_id, @match.course.holes.collect {|h| [h.hole_number, h.id]} %></td>
+    </tr>
+<<<<<<< HEAD
+<<<<<<< HEAD
+    <tr>
+=======
+    <tr class="info">
+>>>>>>> ccc3fa2acb7ebf15bf0f8fd2f4bb4a63276a99e6
+=======
+    <tr class="info">
+>>>>>>> ccc3fa2acb7ebf15bf0f8fd2f4bb4a63276a99e6
+>>>>>>> 337d42880bbd6e423c004f7df78f0449f40e0e77
       <td><strong>Strokes:</strong></td>
       <td><%= f.select(:stroke, options_for_select((1..11).step(1).to_a.map{|s| ["#{s}", s]})) %></td>
     </tr>
     <tr>
+<<<<<<< HEAD
 <<<<<<< HEAD
       <td></td><td><%= f.submit 'Score',:class => 'btn btn-success' %></td>
     </tr>
   </table>
 <% end %>
 =======
+=======
+>>>>>>> 337d42880bbd6e423c004f7df78f0449f40e0e77
       <td colspan="2"><%= f.submit %></td>
     </tr>
   </table>
 <% end %>
 <p><%= link_to 'Edit', edit_match_path(@match) %> | <%= link_to 'Back', matches_path %></p>
+<<<<<<< HEAD
+>>>>>>> 337d42880bbd6e423c004f7df78f0449f40e0e77
+=======
 >>>>>>> 337d42880bbd6e423c004f7df78f0449f40e0e77
 </body>
 </html>
