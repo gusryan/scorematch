@@ -2,6 +2,38 @@ table {
   width: 75%;
   background-color: transparent;
   border-collapse: collapse;
-  border-spacing: 50;
- }
+}
+body 
+ {
+background-color: #CCFFFF;
+/*padding-top: 80px;*/
+padding-top: 20px;
+
+}
+.nav li {
+  display: inline-block;
+  vertical-align: top;
+  padding: 35%
+  /* Colors */
+  background-color: #FFFFFF;
+  text-align: center;
+
+}
+#scores {
+width: 65%;
+}
+.field3 {
+}
+#golfers{
+width: 65%;
+}
+#courses{
+width: 65%;
+}
+#top-btn {
+width: 65%;
+}
+h3 {
+width: 75%;
+}
 

@@ -10,6 +10,8 @@ class MatchesController < ApplicationController
   # GET /matches/1
   # GET /matches/1.json
   def show
+ @g1scores = Score.where(:golfer_id => @match.golfer1_id)
+ @g2scores = Score.where(:golfer_id => @match.golfer2_id)
   end
 
   # GET /matches/new

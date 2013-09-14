@@ -1,8 +1,9 @@
-<h3>Matches</h3>
+<h3><%= link_to 'New Match', new_match_path, :class => 'btn btn-inverse'  %>
+</h3>
 
-<table class="table table-striping">
-  <thead>
-    <tr>
+<table id="courses" class="table table-striping">
+<thead >
+<tr>
       <th>Name</th>
       <th>Golfer 1</th>
       <th>Golfer 2</th>
@@ -15,15 +16,13 @@
   <tbody>
     <% @matches.each do |match| %>
       <tr>
-        <td><%= link_to match.name, match %></td>
+        <td><%= link_to match.name, match, :class => 'btn btn-success' %></td>
         <td><%= match.golfer1.name %></td>
         <td><%= match.golfer2.name %></td>
 	<td><%= match.course.name %></td>
-        <td><%= match.score %></td>
+	<td><%= match.score %></td>
         <td><%= match.result %></td>
-        <td><%= link_to 'Show', match %> 
-        | <%= link_to 'Edit', edit_match_path(match) %> | 
-        <%= link_to 'Destroy', match, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<td></td>
 </td>
       </tr>
     <% end %>
@@ -32,4 +31,3 @@
 
 <br>
 
-<%= link_to 'New Match', new_match_path %>

@@ -22,20 +22,20 @@
 
 <!-- Hole Listing -->
 
-<table class="table table-bordered">
-<tr><td>Hole #</td><% @course.holes.each do |c| %>
+<table id="scores" class="table table-bordered">
+<tr class="warning"><td><strong>Hole #</strong></td><% @course.holes.each do |c| %>
 <td><%= c.hole_number %><% end %></td>
-</tr><br>
+</tr>
 
-<tr><td >Par</td><% @course.holes.each do |c| %>
+<tr class="warning"><td><strong>Par</strong></td><% @course.holes.each do |c| %>
 <td><%= c.par %><% end %></td>
-</tr><br>
+</tr>
 
-<tr><td>Handicap</td><% @course.holes.each do |c| %>
+<tr class="warning"><td><strong>Handicap</strong></td><% @course.holes.each do |c| %>
 <td><%= c.handicap %><% end %></td>
 </tr><br>
 
-<tr><td>Yardage</td><% @course.holes.each do |c| %>
+<tr class="warning"><td><strong>Yardage</strong></td><% @course.holes.each do |c| %>
 <td><%= c.yardage %><% end %>
 </td>
 </tr><br>
@@ -46,19 +46,19 @@
 
 <%= form_for([@course, @course.holes.build]) do |f| %>
 <div class="field">
-<%= f.label :hole_number %><br />
-<%= f.text_field :hole_number %>
+<%= f.label :hole_number %>
+<%= f.select(:hole_number, options_for_select((1..18).step(1).to_a.map{|s| ["#{s}", s]})) %>
 </div>
 <div class="field">
-<%= f.label :par %><br />
-<%= f.text_field :par %>
+<%= f.label :par %>
+<%= f.select(:par, options_for_select((3..5).step(1).to_a.map{|s| ["#{s}", s]})) %>
 </div>
 <div class="field">
-<%= f.label :handicap %><br />
-<%= f.text_field :handicap %>
+<%= f.label :handicap %>
+<%= f.select(:handicap, options_for_select((1..18).step(1).to_a.map{|s| ["#{s}", s]})) %>
 </div>
-<div class="field">
-<%= f.label :yardage %><br />
+<div class="field3">
+<%= f.label :yardage %>
 <%= f.text_field :yardage %>
 </div>
 <div class="actions">

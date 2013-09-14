@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
+<% Score.where(params[:id]).order(:hole_number) do |s| %> 
 <p>
   <strong>Golfer:</strong>
   <%= @score.golfer_id %>
@@ -19,6 +20,7 @@
   <strong>Score:</strong>
   <%= @score.stroke %>
 </p>
+<% end %>
 
 <%= link_to 'Edit', edit_score_path(@score) %> |
 <%= link_to 'Back', scores_path %>

@@ -7,19 +7,21 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
 <div class="container">
-<div class="page-header"><h2>Match Play Calculator</h2></div>
-
-<ul class="nav nav-tabs">
-<li><a href="/courses">Courses</a></li>
-<li><a href="/golfers">Golfers</a></li>
-<li><a href="/matches">Matches</a></li>
-</ul>
+<div class="btn-group btn-group-centered">
+<div class="navbar-header">
+   <ul id="top-btn" class="nav">
+        <li><a class="btn btn-success" class="brand" href="#"><h4>Match Play Calculator</h4></a></li>
+	<li><a class="btn btn-success" class="brand" href="/courses"><h4>Courses</h4></a></li>
+	<li><a class="btn btn-success" class="brand" href="/golfers"><h4>Golfers</h4></a></li>
+	<li><a class="btn btn-success" class="brand" href="/matches"><h4>Matches</h4></a></li>
+   </ul>
+</div>
+</div>
 
 <%= yield %>
 
 
-</body>
 </div>
+</body>
 </html>
