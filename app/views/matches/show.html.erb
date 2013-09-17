@@ -1,7 +1,6 @@
 
 <id="notice"><%= notice %></p>
 <h4><%= @match.name %> - <%= Golfer.find(@match.golfer1).name %> vs. <%= @match.golfer2.name %> at <em><%= @match.course.name %></em></h4>
-
 <table id="scores" class="table table-bordered table-condensed">  
 <tr class="warning">
     <td><strong>Hole #</strong></td>
@@ -36,8 +35,9 @@
   <tr class="success">
     <td><strong><%= Golfer.find(@match.golfer2).name %></strong></td>
  <% @g2scores.each do |gh2| %> <td>
-<%= gh2.stroke %><% end %>
+<%= gh2.stroke %><% end%>
 </td>
+
   </tr>
 </table>
 

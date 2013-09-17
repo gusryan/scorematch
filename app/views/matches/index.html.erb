@@ -16,7 +16,7 @@
   <tbody>
     <% @matches.each do |match| %>
       <tr>
-        <td><%= link_to match.name, match, :class => 'btn btn-success' %></td>
+        <td><%= link_to match.name, match, :class => 'btn btn-urgent' %></td>
         <td><%= match.golfer1.name %></td>
         <td><%= match.golfer2.name %></td>
 	<td><%= match.course.name %></td>

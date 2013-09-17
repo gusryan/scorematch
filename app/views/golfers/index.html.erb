@@ -12,7 +12,7 @@
   <tbody>
     <% @golfers.each do |golfer| %>
       <tr>
-        <td><%= link_to golfer.name, edit_golfer_path(golfer), :class => 'btn btn-success' %></td>
+        <td><%= link_to golfer.name, edit_golfer_path(golfer), :class => 'btn btn-urgent' %></td>
         <td><%= golfer.handicap %></td>
       </tr>
     <% end %>
